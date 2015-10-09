@@ -49,4 +49,29 @@ class Plugin extends Base
             )
         );
     }
+
+    public function getPluginName()
+    {
+        return 'Timetable';
+    }
+
+    public function getPluginDescription()
+    {
+        return t('Timetable management for users.');
+    }
+
+    public function getPluginAuthor()
+    {
+        return 'Frédéric Guillot';
+    }
+
+    public function getPluginVersion()
+    {
+        return '1.0.0';
+    }
+
+    public function getPluginHomepage()
+    {
+        return 'https://github.com/kanboard/plugin-timetable';
+    }
 }
