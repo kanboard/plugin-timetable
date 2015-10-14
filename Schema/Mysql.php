@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugin\Timetable\Schema;
+namespace Kanboard\Plugin\Timetable\Schema;
 
 const VERSION = 1;
 

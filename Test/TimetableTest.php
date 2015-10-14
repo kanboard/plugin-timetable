@@ -2,13 +2,13 @@
 
 require_once 'tests/units/Base.php';
 
-use Core\Plugin\Loader;
-use Model\User;
-use Plugin\Timetable\Model\Timetable;
-use Plugin\Timetable\Model\TimetableDay;
-use Plugin\Timetable\Model\TimetableWeek;
-use Plugin\Timetable\Model\TimetableOff;
-use Plugin\Timetable\Model\TimetableExtra;
+use Kanboard\Core\Plugin\Loader;
+use Kanboard\Model\User;
+use Kanboard\Plugin\Timetable\Model\Timetable;
+use Kanboard\Plugin\Timetable\Model\TimetableDay;
+use Kanboard\Plugin\Timetable\Model\TimetableWeek;
+use Kanboard\Plugin\Timetable\Model\TimetableOff;
+use Kanboard\Plugin\Timetable\Model\TimetableExtra;
 
 class TimetableTest extends Base
 {

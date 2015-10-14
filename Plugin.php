@@ -1,10 +1,10 @@
 <?php
 
-namespace Plugin\Timetable;
+namespace Kanboard\Plugin\Timetable;
 
 use DateTime;
-use Core\Translator;
-use Core\Plugin\Base;
+use Kanboard\Core\Translator;
+use Kanboard\Core\Plugin\Base;
 
 class Plugin extends Base
 {

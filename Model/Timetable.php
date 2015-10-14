@@ -1,10 +1,10 @@
 <?php
 
-namespace Plugin\Timetable\Model;
+namespace Kanboard\Plugin\Timetable\Model;
 
 use DateTime;
 use DateInterval;
-use Model\Base;
+use Kanboard\Model\Base;
 
 /**
  * Timetable

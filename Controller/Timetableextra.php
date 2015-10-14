@@ -1,8 +1,8 @@
 <?php
 
-namespace Plugin\Timetable\Controller;
+namespace Kanboard\Plugin\Timetable\Controller;
 
-use Controller\User;
+use Kanboard\Controller\User;
 
 /**
  * Over-time Timetable controller
