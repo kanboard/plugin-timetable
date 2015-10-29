@@ -22,4 +22,5 @@ return array(
     'Do you really want to remove this time slot?' => 'Voulez-vous vraiment supprimer ce créneau horaire ?',
     'Remove time slot' => 'Supprimer un créneau horaire',
     'Add new time slot' => 'Ajouter un créneau horaire',
+    'This timetable is used when the checkbox "all day" is checked for scheduled time off and overtime.' => 'Pour les heures d\'absences et les heures supplémentaires , lorsque la case "Toute la journée" est cochée, c\'est cet horaire qui est utilisé.',
 );
