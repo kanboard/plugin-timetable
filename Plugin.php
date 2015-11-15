@@ -57,7 +57,7 @@ class Plugin extends Base
 
     public function getPluginDescription()
     {
-        return t('Timetable management for users.');
+        return t('Timetable management for users');
     }
 
     public function getPluginAuthor()

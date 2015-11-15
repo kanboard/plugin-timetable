@@ -61,11 +61,11 @@ class Timetableoff extends User
                     $values['end'],
                     $values['comment'])) {
 
-                $this->session->flash(t('Time slot created successfully.'));
+                $this->flash->success(t('Time slot created successfully.'));
                 $this->response->redirect($this->helper->url->to($this->controller_url, 'index', array('plugin' => 'timetable', 'user_id' => $values['user_id'])));
             }
             else {
-                $this->session->flashError(t('Unable to save this time slot.'));
+                $this->flash->failure(t('Unable to save this time slot.'));
             }
         }
 
@@ -98,10 +98,10 @@ class Timetableoff extends User
         $user = $this->getUser();
 
         if ($this->{$this->model}->remove($this->request->getIntegerParam('slot_id'))) {
-            $this->session->flash(t('Time slot removed successfully.'));
+            $this->flash->success(t('Time slot removed successfully.'));
         }
         else {
-            $this->session->flash(t('Unable to remove this time slot.'));
+            $this->flash->success(t('Unable to remove this time slot.'));
         }
 
         $this->response->redirect($this->helper->url->to($this->controller_url, 'index', array('plugin' => 'timetable', 'user_id' => $user['id'])));
