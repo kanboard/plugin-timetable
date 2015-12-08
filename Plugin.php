@@ -5,6 +5,7 @@ namespace Kanboard\Plugin\Timetable;
 use DateTime;
 use Kanboard\Core\Translator;
 use Kanboard\Core\Plugin\Base;
+use Kanboard\Core\Security\Role;
 
 class Plugin extends Base
 {
@@ -12,17 +13,15 @@ class Plugin extends Base
     {
         $container = $this->container;
 
-        $this->acl->extend('admin_acl', array(
-            'timetable' => '*',
-            'timetableday' => '*',
-            'timetableextra' => '*',
-            'timetableoff' => '*',
-            'timetableweek' => '*',
-        ));
+        $this->applicationAccessMap->add('timetable', '*', Role::APP_ADMIN);
+        $this->applicationAccessMap->add('timetableday', '*', Role::APP_ADMIN);
+        $this->applicationAccessMap->add('timetableextra', '*', Role::APP_ADMIN);
+        $this->applicationAccessMap->add('timetableoff', '*', Role::APP_ADMIN);
+        $this->applicationAccessMap->add('timetableweek', '*', Role::APP_ADMIN);
 
         $this->template->hook->attach('template:user:sidebar:actions', 'timetable:user/sidebar');
 
-        $this->on('session.bootstrap', function($container) {
+        $this->on('app.bootstrap', function($container) {
             Translator::load($container['config']->getCurrentLanguage(), __DIR__.'/Locale');
         });
 
@@ -67,7 +66,7 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.0.1';
+        return '1.0.3';
     }
 
     public function getPluginHomepage()
