@@ -10,7 +10,7 @@ return array(
     'Overtime timetable' => 'График сверхурочных',
     'Time off timetable' => 'Время в графике',
     'Timetable' => 'График',
-    'Work timetable' => 'Work timetable',
+    'Work timetable' => 'График работы',
     'Week timetable' => 'График на неделю',
     'Day timetable' => 'График на день',
     'From' => 'От кого',
