@@ -25,7 +25,7 @@ class Timetable extends User
         $to = $this->request->getStringParam('to', date('Y-m-d', strtotime('next week')));
         $timetable = $this->timetable->calculate($user['id'], new DateTime($from), new DateTime($to));
 
-        $this->response->html($this->layout('timetable:timetable/index', array(
+        $this->response->html($this->helper->layout->user('timetable:timetable/index', array(
             'user' => $user,
             'timetable' => $timetable,
             'values' => array(

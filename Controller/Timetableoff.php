@@ -33,7 +33,7 @@ class Timetableoff extends User
                 ->setQuery($this->{$this->model}->getUserQuery($user['id']))
                 ->calculate();
 
-        $this->response->html($this->layout($this->template_dir.'/index', array(
+        $this->response->html($this->helper->layout->user($this->template_dir.'/index', array(
             'values' => $values + array('user_id' => $user['id']),
             'errors' => $errors,
             'paginator' => $paginator,
@@ -63,8 +63,7 @@ class Timetableoff extends User
 
                 $this->flash->success(t('Time slot created successfully.'));
                 $this->response->redirect($this->helper->url->to($this->controller_url, 'index', array('plugin' => 'timetable', 'user_id' => $values['user_id'])));
-            }
-            else {
+            } else {
                 $this->flash->failure(t('Unable to save this time slot.'));
             }
         }
@@ -81,7 +80,7 @@ class Timetableoff extends User
     {
         $user = $this->getUser();
 
-        $this->response->html($this->layout($this->template_dir.'/remove', array(
+        $this->response->html($this->helper->layout->user($this->template_dir.'/remove', array(
             'slot_id' => $this->request->getIntegerParam('slot_id'),
             'user' => $user,
         )));
@@ -99,8 +98,7 @@ class Timetableoff extends User
 
         if ($this->{$this->model}->remove($this->request->getIntegerParam('slot_id'))) {
             $this->flash->success(t('Time slot removed successfully.'));
-        }
-        else {
+        } else {
             $this->flash->success(t('Unable to remove this time slot.'));
         }
 

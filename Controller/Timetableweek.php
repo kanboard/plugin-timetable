@@ -32,7 +32,7 @@ class Timetableweek extends User
             );
         }
 
-        $this->response->html($this->layout('timetable:timetable_week/index', array(
+        $this->response->html($this->helper->layout->user('timetable:timetable_week/index', array(
             'timetable' => $this->timetableWeek->getByUser($user['id']),
             'values' => $values,
             'errors' => $errors,
@@ -55,8 +55,7 @@ class Timetableweek extends User
             if ($this->timetableWeek->create($values['user_id'], $values['day'], $values['start'], $values['end'])) {
                 $this->flash->success(t('Time slot created successfully.'));
                 $this->response->redirect($this->helper->url->to('timetableweek', 'index', array('plugin' => 'timetable', 'user_id' => $values['user_id'])));
-            }
-            else {
+            } else {
                 $this->flash->failure(t('Unable to save this time slot.'));
             }
         }
@@ -73,7 +72,7 @@ class Timetableweek extends User
     {
         $user = $this->getUser();
 
-        $this->response->html($this->layout('timetable:timetable_week/remove', array(
+        $this->response->html($this->helper->layout->user('timetable:timetable_week/remove', array(
             'slot_id' => $this->request->getIntegerParam('slot_id'),
             'user' => $user,
         )));
@@ -91,8 +90,7 @@ class Timetableweek extends User
 
         if ($this->timetableWeek->remove($this->request->getIntegerParam('slot_id'))) {
             $this->flash->success(t('Time slot removed successfully.'));
-        }
-        else {
+        } else {
             $this->flash->success(t('Unable to remove this time slot.'));
         }
 

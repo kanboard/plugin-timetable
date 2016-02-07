@@ -21,7 +21,7 @@ class Timetableday extends User
     {
         $user = $this->getUser();
 
-        $this->response->html($this->layout('timetable:timetable_day/index', array(
+        $this->response->html($this->helper->layout->user('timetable:timetable_day/index', array(
             'timetable' => $this->timetableDay->getByUser($user['id']),
             'values' => $values + array('user_id' => $user['id']),
             'errors' => $errors,
@@ -44,8 +44,7 @@ class Timetableday extends User
             if ($this->timetableDay->create($values['user_id'], $values['start'], $values['end'])) {
                 $this->flash->success(t('Time slot created successfully.'));
                 $this->response->redirect($this->helper->url->to('timetableday', 'index', array('plugin' => 'timetable', 'user_id' => $values['user_id'])));
-            }
-            else {
+            } else {
                 $this->flash->failure(t('Unable to save this time slot.'));
             }
         }
@@ -62,7 +61,7 @@ class Timetableday extends User
     {
         $user = $this->getUser();
 
-        $this->response->html($this->layout('timetable:timetable_day/remove', array(
+        $this->response->html($this->helper->layout->user('timetable:timetable_day/remove', array(
             'slot_id' => $this->request->getIntegerParam('slot_id'),
             'user' => $user,
         )));
@@ -80,8 +79,7 @@ class Timetableday extends User
 
         if ($this->timetableDay->remove($this->request->getIntegerParam('slot_id'))) {
             $this->flash->success(t('Time slot removed successfully.'));
-        }
-        else {
+        } else {
             $this->flash->success(t('Unable to remove this time slot.'));
         }
 

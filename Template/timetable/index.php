@@ -35,9 +35,9 @@
     </tr>
     <?php foreach ($timetable as $slot): ?>
     <tr>
-        <td><?= dt('%B %e, %Y', $slot[0]->getTimestamp()) ?></td>
-        <td><?= dt('%k:%M %p', $slot[0]->getTimestamp()) ?></td>
-        <td><?= dt('%k:%M %p', $slot[1]->getTimestamp()) ?></td>
+        <td><?= $this->dt->date($slot[0]->getTimestamp()) ?></td>
+        <td><?= $this->dt->time($slot[0]->getTimestamp()) ?></td>
+        <td><?= $this->dt->time($slot[1]->getTimestamp()) ?></td>
     </tr>
     <?php endforeach ?>
 </table>
