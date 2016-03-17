@@ -19,7 +19,7 @@
         <td><?= $slot['all_day'] == 1 ? t('Yes') : t('No') ?></td>
         <td><?= $slot['start'] ?></td>
         <td><?= $slot['end'] ?></td>
-        <td><?= $this->e($slot['comment']) ?></td>
+        <td><?= $this->helper->text->e($slot['comment']) ?></td>
         <td>
             <?= $this->url->link(t('Remove'), 'timetableextra', 'confirm', array('plugin' => 'timetable', 'user_id' => $user['id'], 'slot_id' => $slot['id'])) ?>
         </td>
