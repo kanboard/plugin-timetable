@@ -2,9 +2,10 @@
 
 namespace Kanboard\Plugin\Timetable\Schema;
 
+use PDO;
 const VERSION = 1;
 
-function version_1($pdo)
+function version_1(PDO $pdo)
 {
     $pdo->exec('CREATE TABLE IF NOT EXISTS timetable_day (
         id INT NOT NULL AUTO_INCREMENT,

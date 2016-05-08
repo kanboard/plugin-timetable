@@ -2,9 +2,7 @@
 
 namespace Kanboard\Plugin\Timetable\Model;
 
-use SimpleValidator\Validator;
 use SimpleValidator\Validators;
-use Kanboard\Model\Base;
 
 /**
  * Timetable over-time

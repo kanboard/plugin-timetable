@@ -2,8 +2,6 @@
 
 namespace Kanboard\Plugin\Timetable\Controller;
 
-use Kanboard\Controller\User;
-
 /**
  * Over-time Timetable controller
  *

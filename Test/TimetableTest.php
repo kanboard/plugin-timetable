@@ -17,8 +17,7 @@ class TimetableTest extends Base
         parent::setUp();
 
         $plugin = new Loader($this->container);
-        $plugin->loadSchema('Timetable');
-        $plugin->load('Timetable');
+        $plugin->scan();
     }
 
     public function testCalculateWorkDays()

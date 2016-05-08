@@ -21,10 +21,6 @@ class Plugin extends Base
 
         $this->template->hook->attach('template:user:sidebar:actions', 'timetable:user/sidebar');
 
-        $this->on('app.bootstrap', function($container) {
-            Translator::load($container['config']->getCurrentLanguage(), __DIR__.'/Locale');
-        });
-
         // Calculate time spent according to the timetable
         $this->hook->on('model:subtask-time-tracking:calculate:time-spent', function($user_id, DateTime $start, DateTime $end) use ($container) {
             return $container['timetable']->calculateEffectiveDuration($user_id, $start, $end);
@@ -34,6 +30,11 @@ class Plugin extends Base
         $this->hook->on('model:subtask-time-tracking:calendar:events', function($user_id, array $events, $start, $end) use ($container) {
             return $container['timetable']->calculateEventsIntersect($user_id, $events, $start, $end);
         });
+    }
+
+    public function onStartup()
+    {
+        Translator::load($this->language->getCurrentLanguage(), __DIR__.'/Locale');
     }
 
     public function getClasses()
@@ -66,7 +67,7 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.0.6';
+        return '1.0.7';
     }
 
     public function getPluginHomepage()
