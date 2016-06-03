@@ -2,9 +2,9 @@
 
 namespace Kanboard\Plugin\Timetable\Model;
 
+use Kanboard\Core\Base;
 use SimpleValidator\Validator;
 use SimpleValidator\Validators;
-use Kanboard\Model\Base;
 
 /**
  * Timetable time off
@@ -72,8 +72,8 @@ class TimetableOff extends Base
      * @param  integer   $user_id   User id
      * @param  string    $date      Day (ISO8601 format)
      * @param  boolean   $all_day   All day flag
-     * @param  float     $start     Start hour (24h format)
-     * @param  float     $end       End hour (24h format)
+     * @param  string    $start     Start hour (24h format)
+     * @param  string    $end       End hour (24h format)
      * @param  string    $comment
      * @return boolean|integer
      */
@@ -88,7 +88,7 @@ class TimetableOff extends Base
             'comment' => $comment,
         );
 
-        return $this->persist(static::TABLE, $values);
+        return $this->db->table(static::TABLE)->persist($values);
     }
 
     /**

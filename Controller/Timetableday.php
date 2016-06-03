@@ -2,7 +2,7 @@
 
 namespace Kanboard\Plugin\Timetable\Controller;
 
-use Kanboard\Controller\User;
+use Kanboard\Controller\BaseController;
 
 /**
  * Day Timetable controller
@@ -10,12 +10,16 @@ use Kanboard\Controller\User;
  * @package  controller
  * @author   Frederic Guillot
  */
-class Timetableday extends User
+class Timetableday extends BaseController
 {
     /**
      * Display timetable for the user
      *
      * @access public
+     * @param array $values
+     * @param array $errors
+     * @throws \Kanboard\Core\Controller\AccessForbiddenException
+     * @throws \Kanboard\Core\Controller\PageNotFoundException
      */
     public function index(array $values = array(), array $errors = array())
     {
@@ -43,13 +47,13 @@ class Timetableday extends User
 
             if ($this->timetableDay->create($values['user_id'], $values['start'], $values['end'])) {
                 $this->flash->success(t('Time slot created successfully.'));
-                $this->response->redirect($this->helper->url->to('timetableday', 'index', array('plugin' => 'timetable', 'user_id' => $values['user_id'])));
+                return $this->response->redirect($this->helper->url->to('timetableday', 'index', array('plugin' => 'timetable', 'user_id' => $values['user_id'])));
             } else {
                 $this->flash->failure(t('Unable to save this time slot.'));
             }
         }
 
-        $this->index($values, $errors);
+        return $this->index($values, $errors);
     }
 
     /**

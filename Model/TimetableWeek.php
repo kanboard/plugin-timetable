@@ -2,9 +2,9 @@
 
 namespace Kanboard\Plugin\Timetable\Model;
 
+use Kanboard\Core\Base;
 use SimpleValidator\Validator;
 use SimpleValidator\Validators;
-use Kanboard\Model\Base;
 
 /**
  * Timetable Workweek
@@ -52,7 +52,7 @@ class TimetableWeek extends Base
             'end' => $end,
         );
 
-        return $this->persist(self::TABLE, $values);
+        return $this->db->table(self::TABLE)->persist($values);
     }
 
     /**

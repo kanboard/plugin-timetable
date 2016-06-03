@@ -4,7 +4,7 @@ namespace Kanboard\Plugin\Timetable\Model;
 
 use DateTime;
 use DateInterval;
-use Kanboard\Model\Base;
+use Kanboard\Core\Base;
 
 /**
  * Timetable

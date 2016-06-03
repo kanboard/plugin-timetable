@@ -3,7 +3,6 @@
 require_once 'tests/units/Base.php';
 
 use Kanboard\Core\Plugin\Loader;
-use Kanboard\Model\User;
 use Kanboard\Plugin\Timetable\Model\Timetable;
 use Kanboard\Plugin\Timetable\Model\TimetableDay;
 use Kanboard\Plugin\Timetable\Model\TimetableWeek;

@@ -3,7 +3,7 @@
 namespace Kanboard\Plugin\Timetable\Controller;
 
 use DateTime;
-use Kanboard\Controller\User;
+use Kanboard\Controller\BaseController;
 
 /**
  * Timetable controller
@@ -11,7 +11,7 @@ use Kanboard\Controller\User;
  * @package  controller
  * @author   Frederic Guillot
  */
-class Timetable extends User
+class Timetable extends BaseController
 {
     /**
      * Display timetable for the user
