@@ -49,11 +49,11 @@ The timetable section is available from the user profile: **User profile > Timet
 
 This timetable is dynamically calculated according to the regular week timetable, time-off and overtime.
 
-![Timetable](http://kanboard.net/screenshots/documentation/timetable.png)
+![Timetable](https://cloud.githubusercontent.com/assets/323546/21756475/c62e9fae-d5ef-11e6-8037-e91005eb1dfc.png)
 
 #### Week Timetable
 
-![Week Timetable](http://kanboard.net/screenshots/documentation/week-timetable.png)
+![Week Timetable](https://cloud.githubusercontent.com/assets/323546/21756479/da443ff8-d5ef-11e6-8d24-2006350a2a5f.png)
 
 The week timetable is used to define regular work hours for the selected user.
 
@@ -68,7 +68,7 @@ When you check the box "All day", the regular day timetable is used to define th
 
 #### Overtime Timetable
 
-![Overtime Timetable](http://kanboard.net/screenshots/documentation/overtime-timetable.png)
+![Overtime Timetable](https://cloud.githubusercontent.com/assets/323546/21756484/e9008a42-d5ef-11e6-8d61-1e33a174f359.png)
 
 The overtime timetable is used to define worked hours outside of regular hours.
 

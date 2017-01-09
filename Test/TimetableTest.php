@@ -210,7 +210,7 @@ class TimetableTest extends Base
         $end = clone($tuesday);
         $end->setTime(10, 03);
 
-        $this->assertEquals(1.5, $t->calculateEffectiveDuration(1, $start, $end));
+        $this->assertEquals(1.52, $t->calculateEffectiveDuration(1, $start, $end));
 
         // Same time slot
         $start = clone($monday);
@@ -219,7 +219,7 @@ class TimetableTest extends Base
         $end = clone($monday);
         $end->setTime(17, 03);
 
-        $this->assertEquals(1, $t->calculateEffectiveDuration(1, $start, $end));
+        $this->assertEquals(0.96, $t->calculateEffectiveDuration(1, $start, $end), '', 0.1);
 
         // Intermediate time slot
         $start = clone($monday);
@@ -228,7 +228,7 @@ class TimetableTest extends Base
         $end = clone($tuesday);
         $end->setTime(16, 03);
 
-        $this->assertEquals(11.5, $t->calculateEffectiveDuration(1, $start, $end));
+        $this->assertEquals(11.52, $t->calculateEffectiveDuration(1, $start, $end));
 
         // Different day
         $start = clone($monday);
@@ -237,7 +237,7 @@ class TimetableTest extends Base
         $end = clone($tuesday);
         $end->setTime(10, 03);
 
-        $this->assertEquals(7, $t->calculateEffectiveDuration(1, $start, $end));
+        $this->assertEquals(7.04, $t->calculateEffectiveDuration(1, $start, $end), '', 0.1);
 
         // Start before first time slot
         $start = clone($monday);
@@ -246,7 +246,7 @@ class TimetableTest extends Base
         $end = clone($tuesday);
         $end->setTime(11, 17);
 
-        $this->assertEquals(8.25, $t->calculateEffectiveDuration(1, $start, $end));
+        $this->assertEquals(8.25, $t->calculateEffectiveDuration(1, $start, $end), '', 0.1);
     }
 
     public function testCalculateDurationWithEmptyTimetable()
@@ -259,6 +259,6 @@ class TimetableTest extends Base
         $end = new DateTime('next Monday');
         $end->setTime(17, 03);
 
-        $this->assertEquals(1, $t->calculateEffectiveDuration(1, $start, $end));
+        $this->assertEquals(1.02, $t->calculateEffectiveDuration(1, $start, $end));
     }
 }
