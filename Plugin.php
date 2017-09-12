@@ -13,11 +13,11 @@ class Plugin extends Base
     {
         $container = $this->container;
 
-        $this->applicationAccessMap->add('timetable', '*', Role::APP_ADMIN);
-        $this->applicationAccessMap->add('timetableday', '*', Role::APP_ADMIN);
-        $this->applicationAccessMap->add('timetableextra', '*', Role::APP_ADMIN);
-        $this->applicationAccessMap->add('timetableoff', '*', Role::APP_ADMIN);
-        $this->applicationAccessMap->add('timetableweek', '*', Role::APP_ADMIN);
+        $this->applicationAccessMap->add('timetable', '*', Role::APP_USER);
+        $this->applicationAccessMap->add('timetableday', '*', Role::APP_USER);
+        $this->applicationAccessMap->add('timetableextra', '*', Role::APP_USER);
+        $this->applicationAccessMap->add('timetableoff', '*', Role::APP_USER);
+        $this->applicationAccessMap->add('timetableweek', '*', Role::APP_USER);
 
         $this->template->hook->attach('template:user:sidebar:actions', 'timetable:user/sidebar');
 
