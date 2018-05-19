@@ -1,8 +1,6 @@
 User Timetable plugin for Kanboard
 ===================================
 
-[![Build Status](https://travis-ci.org/kanboard/plugin-timetable.svg?branch=master)](https://travis-ci.org/kanboard/plugin-timetable)
-
 - Timetable / schedule for users
 - Display in the calendar intersects between sub-task time tracking and user schedule
 - Timetable management: weekly, daily, overtime, days off
